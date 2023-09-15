@@ -54,7 +54,7 @@ jobs:
           use-kubelogin: 'true'
       - name: Apply Kubernetes Configuration
         run: |
-          envsubst < app.yaml | kubectl apply -f -
+          envsubst < manifests/app.yaml | kubectl apply -f -
         env:
           FRONTEND_REPLICAS: ${{ matrix.frontend_replicas }}
           FRONTEND_CPU_LIMIT: ${{ matrix.frontend_cpu_limit }}
